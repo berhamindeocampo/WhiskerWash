@@ -69,7 +69,3 @@ Since this is a client-side web application built with HTML, CSS, and JS, you ca
    - Alternatively, use the **Live Server** extension in VS Code for hot-reloading development.
 
 ---
-
-## 🔒 License
-
-This project is open-source and available under the MIT License.
