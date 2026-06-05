@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <title>Coming Soon - WhiskerWash</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/coming-soon.css">
+</head>
+
+<body>
+  <div class="homepage_container">
+    <header class="header">
+      <a class="logo" href="homepage.html">
+        <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
+      </a>
+      <nav class="nav_links">
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="about-us.html" class="active">About</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li class="dropdown">
+            <a href="#">Pages</a>
+            <ul class="dropdown_menu">
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="products/our-products.html">Products</a></li>
+        </ul>
+      </nav>
+      <a href="contact-us.html">
+        <button class="header_contact_button">
+          Contact Us <span class="arrow">↗</span>
+        </button>
+      </a>
+    </header>
+
+    <div class="coming_soon_page_container">
+      <div class="coming_soon_heading">
+        <span>COMING</span>
+        <span>SOON</span>
+      </div>
+
+      <div class="countdown_wrapper">
+        <div class="countdown_column">
+          <span class="countdown_number" id="days">30</span>
+          <div class="countdown_divider"></div>
+          <span class="countdown_label">DAYS</span>
+        </div>
+        <div class="countdown_column">
+          <span class="countdown_number" id="hours">24</span>
+          <div class="countdown_divider"></div>
+          <span class="countdown_label">HOURS</span>
+        </div>
+        <div class="countdown_column">
+          <span class="countdown_number" id="minutes">59</span>
+          <div class="countdown_divider"></div>
+          <span class="countdown_label">MINUTES</span>
+        </div>
+        <div class="countdown_column">
+          <span class="countdown_number" id="seconds">59</span>
+          <div class="countdown_divider"></div>
+          <span class="countdown_label">SECONDS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Live Countdown Timer logic
+    // Target date: 30 days from now
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 30);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        clearInterval(timerInterval);
+        return;
+      }
+
+      // Calculations for days, hours, minutes and seconds
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      // Display results with leading zero if needed
+      document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+      document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    // Initial call and set interval
+    updateCountdown();
+    const timerInterval = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

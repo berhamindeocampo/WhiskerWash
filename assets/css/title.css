@@ -1,0 +1,24 @@
+.title_section {
+    font-family: Bayon, sans-serif;
+    background-color: #fbc673; /* Orange/Yellow banner color */
+    width: 100%;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    letter-spacing: normal;
+    align-items: center;
+    text-align: center;
+}
+
+.title_section_container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.title_section_left h1 {
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000000;
+    margin: 0;
+}

@@ -1,0 +1,229 @@
+/* ==========================================
+   Grooming Service Details Styles
+   ========================================== */
+
+/* Main Container */
+.service_details_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background-color: #FFFAEF;
+}
+
+/* Top Section (Grid layout for Image & Details) */
+.service_top_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: stretch;
+  margin-bottom: 60px;
+}
+
+.service_image_wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.service_image_wrapper .service_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service_info_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service_name {
+  font-family: 'Bayon', sans-serif;
+  font-size: 56px;
+  letter-spacing: 0.02em;
+  color: #111;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.service_tagline {
+  font-family: 'Bayon', sans-serif;
+  font-weight: 400;
+  font-size: 20px; /* Slightly larger to fit the stylized Bayon font beautifully */
+  letter-spacing: 0.04em;
+  color: #111;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.service_description_text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service_description {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  margin: 0;
+}
+
+/* Bottom Section (Includes List) */
+.service_includes_section {
+  margin-top: 50px;
+  padding-top: 20px;
+}
+
+.includes_title {
+  font-family: 'Bayon', sans-serif;
+  font-size: 38px;
+  letter-spacing: 0.02em;
+  color: #111;
+  margin: 0 0 35px 0;
+  text-transform: uppercase;
+}
+
+.includes_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.includes_item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.includes_item_title {
+  font-family: 'Bayon', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.includes_item_desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  margin: 0;
+}
+
+/* Additional Page Elements (Remaining content styling) */
+.large_image_container {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 0 40px;
+}
+
+.large_image_container img {
+  width: 100%;
+  border-radius: 40px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.image_row_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 40px;
+}
+
+.image_row_container .small_image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Why Choose Us Section */
+.why_choose_us_section {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 0 40px;
+}
+
+.why_choose_us_title {
+  font-family: 'Bayon', sans-serif;
+  font-size: 38px;
+  letter-spacing: 0.02em;
+  color: #111;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.why_choose_us_details {
+  max-width: 1200px;
+  margin: 0 auto 24px auto;
+  padding: 0 40px;
+}
+
+.why_choose_us_item_title {
+  font-family: 'Bayon', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin: 0 0 8px 0;
+}
+
+.why_choose_us_description {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555555;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .service_top_section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .service_image_wrapper {
+    aspect-ratio: 16/9;
+  }
+  .service_name {
+    font-size: 48px;
+  }
+  .image_row_container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service_details_container {
+    padding: 40px 20px;
+  }
+  .large_image_container {
+    padding: 0 20px;
+  }
+  .image_row_container {
+    padding: 0 20px;
+  }
+  .why_choose_us_section {
+    padding: 0 20px;
+  }
+  .why_choose_us_details {
+    padding: 0 20px;
+  }
+  .service_name {
+    font-size: 38px;
+  }
+  .includes_title {
+    font-size: 30px;
+  }
+}

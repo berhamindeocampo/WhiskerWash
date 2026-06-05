@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/contact-us.css">
+</head>
+
+<title>Contact Us - WhiskerWash</title>
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+</head>
+<body>
+  <div class="homepage_container">
+    <header class="header">
+      <a class="logo" href="homepage.html">
+        <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
+      </a>
+      <nav class="nav_links">
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li class="dropdown">
+            <a href="#">Pages</a>
+            <ul class="dropdown_menu">
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="products/our-products.html" class="active">Products</a></li>
+        </ul>
+      </nav>
+      <button class="header_contact_button">
+        Contact Us <span class="arrow">↗</span>
+      </button>
+    </header>
+
+    <div class="title_section">
+        <div class="title_section_container">
+          <div class="title_section_left">
+            <h1>Contact Us</h1>
+          </div>
+        </div>
+    </div>
+
+    <div class="contact_us_container">
+        <div class="message_section">
+            <h1 class="main_message">
+                CONNECT WITH OUR TEAM<br>
+                WE'RE JUST A MESSAGE AWAY!
+            </h1>
+            <p class="sub_message">
+                Connect with our team for any inquiries, feedback, or assistance you may need. We're here to ensure your experience is smooth and satisfying. Don't hesitate to reach out — we're just a message away!
+            </p>
+        </div>
+    </div>
+
+    <div class="contact_form_container">
+        <form class="contact_form">
+            <div class="form_grid">
+                <div class="form_group">
+                    <label class="form_label" for="name">Name</label>
+                    <input type="text" id="name" class="form_input" placeholder="Shizuku Kuroe">
+                </div>
+                <div class="form_group">
+                    <label class="form_label" for="email">Email address</label>
+                    <input type="email" id="email" class="form_input" placeholder="example@email.com">
+                </div>
+                <div class="form_group">
+                    <label class="form_label" for="phone">Phone number</label>
+                    <input type="tel" id="phone" class="form_input" placeholder="(+63) 917-0000-000">
+                </div>
+                <div class="form_group">
+                    <label class="form_label">Services</label>
+                    <div class="custom_dropdown" id="servicesDropdown">
+                        <div class="dropdown_toggle">
+                            <span class="selected_value">Choose Service</span>
+                            <span class="dropdown_arrow">▼</span>
+                        </div>
+                        <ul class="dropdown_options">
+                            <li class="option_item" data-value="grooming">Grooming</li>
+                            <li class="option_item" data-value="walking">Walking</li>
+                            <li class="option_item" data-value="boarding">Boarding</li>
+                            <li class="option_item" data-value="training">Training</li>
+                            <li class="option_item" data-value="nail-clipping">Nail Clipping</li>
+                            <li class="option_item" data-value="daycare">Daycare</li>
+                        </ul>
+                        <input type="hidden" name="service" id="selected_service_input">
+                    </div>
+                </div>
+            </div>
+            <div class="form_group full_width">
+                <label class="form_label" for="message">Leave us a message</label>
+                <textarea id="message" class="form_textarea" placeholder="Please type your message here..."></textarea>
+            </div>
+            <div class="form_submit_wrapper">
+                <button type="submit" class="send_message_btn">
+                    Send message <span class="arrow">↗</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="contactPopup" class="contact_popup_overlay" aria-hidden="true">
+        <div class="contact_popup_card" role="dialog" aria-modal="true" aria-labelledby="contactPopupTitle">
+            <h3 id="contactPopupTitle">Message sent</h3>
+            <p id="contactPopupMessage">Thanks for reaching out! Your message has been captured.</p>
+            <button id="closeContactPopup" class="contact_popup_close" type="button">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer_container">
+      <div class="footer_row footer_top_row">
+        <div class="newsletter_signup_text">
+          <h1>Newsletter<br>Signup <span class="paw_icons">🐾</span></h1>
+        </div>
+        <div class="email_and_social_section">
+          <div class="email_input_bar">
+            <input type="email" placeholder="Your Email Address">
+            <button class="submit_btn">Submit <span class="arrow">↗</span></button>
+          </div>
+          <div class="social_media_icons">
+            <a href="#" class="social_icon">in</a>
+            <a href="#" class="social_icon">✈</a>
+            <a href="#" class="social_icon">𝕏</a>
+            <a href="#" class="social_icon">f</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_row footer_middle_row">
+        <div class="logo">
+          Whisker<br>Wash <span class="paw_icons_small">🐾</span>
+        </div>
+        <div class="nav_and_contact_wrapper">
+          <nav class="link_containers">
+            <a href="#">Who We Are?</a>
+            <a href="#">Help</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+          </nav>
+          <div class="primary_button">
+            <a href="#" class="contact_us_button">Contact Us <span class="arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom_section">
+        <p class="copyright">© 2026 WhiskerWash. All Rights Reserved.</p>
+        <div class="footer_links_section">
+          <a class="footer_link" href="#">Privacy Policy</a>
+          <a class="footer_link" href="#">Terms of use</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/contact.js"></script>
+  </body>
+</html>

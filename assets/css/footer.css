@@ -1,0 +1,358 @@
+/* Footer Main Container */
+.footer_container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 80px auto 80px auto;
+    background-color: #f7b455;
+    /* Warm golden-mustard tone */
+    border-radius: 40px;
+    padding: 64px 56px 36px;
+    box-sizing: border-box;
+    text-align: left;
+    /* Overriding center-align of parent gallery_header */
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    font-family: 'Lato', sans-serif;
+    color: #111111;
+    box-shadow: 0 20px 50px rgba(101, 73, 34, 0.08);
+}
+
+/* Rows styling */
+.footer_row {
+    width: 100%;
+}
+
+/* Top Row: Newsletter Signup and Email/Social Section */
+.footer_top_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 36px;
+}
+
+.newsletter_signup_text h1 {
+    font-family: 'Bayon', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #111111;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.paw_icons {
+    display: inline-block;
+    font-size: 0.75em;
+    margin-left: 6px;
+    vertical-align: middle;
+    transform: rotate(-12deg);
+}
+
+.email_and_social_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+/* Email Input Pill Bar */
+.email_input_bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 999px;
+    padding: 6px 6px 6px 24px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 440px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.email_input_bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    color: #111111;
+}
+
+.email_input_bar input::placeholder {
+    color: #a49a8f;
+    opacity: 0.8;
+}
+
+.email_input_bar .submit_btn {
+    background-color: #111111;
+    /* Sleek black button matching social icons */
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 220ms ease;
+}
+
+/* Optional variation: match the button color or make it stand out */
+.email_input_bar .submit_btn {
+    background-color: #f7b455;
+    /* matching background or peach contrast */
+    background: #f78b4f;
+    /* beautiful contrast peach/orange in mockup */
+    background: #f79848;
+    color: #111111;
+}
+
+.email_input_bar .submit_btn {
+    background: #f8c076;
+    /* matching soft gold button against white input */
+    color: #111111;
+    background-color: #fcae59;
+}
+
+.email_input_bar .submit_btn:hover {
+    background-color: #f39732;
+    transform: scale(1.02);
+}
+
+/* Social Media Icons */
+.social_media_icons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.social_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 220ms ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.social_icon:hover {
+    background-color: #222222;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/* Middle Row: Logo and Navigation wrapper */
+.footer_middle_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.footer_middle_row .logo {
+    font-family: 'Bayon', sans-serif;
+    font-size: 2.1rem;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #111111;
+    letter-spacing: -0.01em;
+}
+
+.paw_icons_small {
+    display: inline-block;
+    font-size: 0.75em;
+    margin-left: 2px;
+    vertical-align: middle;
+    transform: rotate(-12deg);
+}
+
+.nav_and_contact_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.link_containers {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.link_containers a {
+    text-decoration: none;
+    color: #111111;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: relative;
+    transition: opacity 220ms ease;
+}
+
+.link_containers a:hover {
+    opacity: 0.7;
+}
+
+/* Elegant sliding underline on hover */
+.link_containers a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #111111;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in-out;
+}
+
+.link_containers a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Contact Us Button link */
+.contact_us_button {
+    text-decoration: none;
+    color: #111111;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 220ms ease;
+}
+
+.contact_us_button:hover {
+    opacity: 0.8;
+}
+
+.contact_us_button:hover .arrow {
+    transform: translate(3px, -3px);
+    transition: transform 220ms ease;
+}
+
+.contact_us_button .arrow {
+    display: inline-block;
+    transition: transform 220ms ease;
+}
+
+/* Bottom Section: Copyright & Links split by subtle border */
+.footer_bottom_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer_bottom_section .copyright {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.88rem;
+    color: #111111;
+    opacity: 0.85;
+    margin: 0;
+}
+
+.footer_links_section {
+    display: flex;
+    gap: 24px;
+}
+
+.footer_link {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.88rem;
+    color: #111111;
+    opacity: 0.85;
+    transition: opacity 220ms ease;
+}
+
+.footer_link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 980px) {
+    .footer_container {
+        padding: 48px 40px 28px;
+        gap: 36px;
+    }
+
+    .footer_top_row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+    }
+
+    .email_and_social_section {
+        align-items: flex-start;
+    }
+
+    .social_media_icons {
+        justify-content: flex-start;
+    }
+
+    .email_input_bar {
+        max-width: 100%;
+    }
+
+    .footer_middle_row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .nav_and_contact_wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .link_containers {
+        width: 100%;
+        justify-content: space-between;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 580px) {
+    .footer_container {
+        padding: 36px 24px 24px;
+        border-radius: 28px;
+        gap: 28px;
+    }
+
+    .link_containers {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer_bottom_section {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
