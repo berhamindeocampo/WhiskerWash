@@ -69,3 +69,7 @@ Since this is a client-side web application built with HTML, CSS, and JS, you ca
    - Alternatively, use the **Live Server** extension in VS Code for hot-reloading development.
 
 ---
+
+# Notice:
+
+This is a practice project I created during my internship. Cloned from a Figma project I have gained permission to.
