@@ -72,4 +72,4 @@ Since this is a client-side web application built with HTML, CSS, and JS, you ca
 
 ## ⚠️ Notice
 
-This is a practice project I created during my internship. Cloned from a Figma project I have gained permission to.
+This is a practice project I created during my internship. Cloned from a Figma template I have gained permission to.
