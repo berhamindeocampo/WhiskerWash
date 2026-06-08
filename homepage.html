@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/homepage.css">
   <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/loading-animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
   <title>Home - WhiskerWash</title>
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
@@ -36,25 +38,37 @@
       </a>
       <nav class="nav_links">
         <ul>
-          <li><a href="../homepage.html">Home</a></li>
-          <li><a href="../about-us.html">About</a></li>
-          <li><a href="../our-services.html">Services</a></li>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="our-services.html">Services</a></li>
           <li class="dropdown">
             <a href="#">Pages</a>
             <ul class="dropdown_menu">
-              <li><a href="../testimonials.html">Testimonials</a></li>
-              <li><a href="../blog.html">Blog</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="blog.html">Blog</a></li>
             </ul>
           </li>
-          <li><a href="../products/our-products.html" class="active">Products</a></li>
+          <li><a href="our-products.html" class="active">Products</a></li>
         </ul>
       </nav>
-      <a href="../contact-us.html">
+      <a href="contact-us.html">
         <button class="header_contact_button">
           Contact Us <span class="arrow">↗</span>
         </button>
       </a>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button> 
     </header>
+
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="paw-spinner">🐾</div>
+            <p class="loading-text">Loading...<span class="dots"></span></p>
+        </div>
+    </div>
 
     <div class="hero_section">
       <div class="hero_top">
@@ -421,5 +435,6 @@
   </div>
 
   <script src="assets/js/dynamic-year.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -20,13 +20,22 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/contact-us.css">
+  <link rel="stylesheet" href="assets/css/loading-animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
 </head>
 
 <title>Contact Us - WhiskerWash</title>
 <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="stylesheet" href="assets/css/loading-animations.css">
 </head>
 <body>
   <div class="homepage_container">
+        <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="paw-spinner">&#x1F43E;</div>
+            <p class="loading-text">Loading<span class="dots"></span></p>
+        </div>
+    </div>
     <header class="header">
       <a class="logo" href="homepage.html">
         <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
@@ -49,7 +58,13 @@
       <button class="header_contact_button">
         Contact Us <span class="arrow">↗</span>
       </button>
-    </header>
+    
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+      </header>
 
     <div class="title_section">
         <div class="title_section_container">
@@ -169,5 +184,6 @@
     </footer>
 
     <script src="assets/js/contact.js"></script>
-  </body>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>

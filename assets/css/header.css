@@ -52,7 +52,7 @@ body {
 
 .logo img {
   display: block;
-  max-height: 56px;
+  height: 50px;
   width: auto;
 }
 
@@ -109,7 +109,7 @@ body {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color: var(--header-link);
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
@@ -185,7 +185,7 @@ body {
 
 .nav_links a:hover,
 .nav_links a:focus-visible {
-  color: #111;
+  color: var(--header-link-hover);
 }
 
 .nav_links > ul > li > a:hover::before,
@@ -195,7 +195,7 @@ body {
 }
 
 .nav_links a.active {
-  color: #111;
+  color: var(--header-link-hover);
 }
 
 .header_contact_button {
@@ -247,7 +247,7 @@ img {
   }
 
   .logo img {
-    max-height: 52px;
+    height: 46px;
   }
 
   .nav_links {

@@ -60,7 +60,7 @@ body {
 
 .logo img {
   display: block;
-  max-height: 56px;
+  height: 50px;
   width: auto;
 }
 
@@ -117,7 +117,7 @@ body {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color: var(--header-link);
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
@@ -186,7 +186,7 @@ body {
 
 .nav_links a:hover,
 .nav_links a:focus-visible {
-  color: #111;
+  color: var(--header-link-hover);
 }
 
 .nav_links a:hover::before,
@@ -196,7 +196,7 @@ body {
 }
 
 .nav_links a.active {
-  color: #111;
+  color: var(--header-link-hover);
 }
 
 .header_contact_button {
@@ -505,14 +505,62 @@ img {
     text-decoration: underline;
 }
 
+/* Loading / Fade-in Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered scroll-in for cards */
+.service-card, .product-card, .blog-card,
+.service_row, .product_card, .blog_card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.service-card.visible, .product-card.visible, .blog-card.visible,
+.service_row.visible, .product_card.visible, .blog_card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* --- Responsive Adjustments --- */
+
+/* Skeleton Loader */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Example usage for cards */
+.card-skeleton {
+    height: 300px;
+    width: 100%;
+}
+
+
 @media (max-width: 1024px) {
   .header {
     padding: 20px 20px;
     gap: 18px;
   }
   .logo img {
-    max-height: 52px;
+    height: 46px;
   }
   .nav_links {
     order: 3;

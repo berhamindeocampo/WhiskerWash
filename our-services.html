@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,28 +20,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/services.css">
-  <link rel="stylesheet" href="../assets/css/title.css">
-  <link rel="stylesheet" href="../assets/css/our-vets.css">
-  <link rel="stylesheet" href="../assets/css/gallery.css">
-  <link rel="stylesheet" href="../assets/css/our-products.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/title.css">
+  <link rel="stylesheet" href="assets/css/our-vets.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <link rel="stylesheet" href="assets/css/our-products.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <title>Our Services - WhiskerWash</title>
+  <link rel="stylesheet" href="assets/css/loading-animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
 </head>
-
-<title>Our Services - WhiskerWash</title>
-<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-</head> 
 <body>
   <div class="homepage_container">
+        <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="paw-spinner">&#x1F43E;</div>
+            <p class="loading-text">Loading<span class="dots"></span></p>
+        </div>
+    </div>
     <header class="header">
-      <a class="logo" href="../homepage.html">
-        <img src="../assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
+      <a class="logo" href="homepage.html">
+        <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
       </a>
       <nav class="nav_links">
         <ul>
-          <li><a href="../homepage.html">Home</a></li>
-          <li><a href="../about-us.html">About</a></li>
-          <li><a href="../services/our-services.html" class="active">Services</a></li>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="our-services.html" class="active">Services</a></li>
           <li class="dropdown">
             <a href="#">Pages</a>
             <ul class="dropdown_menu">
@@ -52,11 +58,16 @@
           <li><a href="our-products.html">Products</a></li>
         </ul>
       </nav>
-      <a href="../contact-us.html">
+      <a href="contact-us.html">
         <button class="header_contact_button">
           Contact Us <span class="arrow">↗</span>
         </button>
       </a>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
     </header>
 
     <div class="title_section">
@@ -80,7 +91,7 @@
       <div class="services_row_container">
         <div class="main_service_row_1">
           <div class="service_row">
-            <img src="../assets/images/groomingpic.png" alt="Grooming service" class="service_image">
+            <img src="assets/images/groomingpic.png" alt="Grooming service" class="service_image">
             <h1>Grooming</h1>
             <p>
               Transform your furry friend with expert grooming services, from baths haircuts, keeping them fresh and
@@ -93,7 +104,7 @@
             </a>
           </div>
           <div class="service_row">
-            <img src="../assets/images/walking.png" alt="Walking service" class="service_image">
+            <img src="assets/images/walking.png" alt="Walking service" class="service_image">
             <h1>Walking</h1>
             <p>
               Keep your companion active and engaged with personalized walking services tailored to their needs.
@@ -105,7 +116,7 @@
             </a>
           </div>
           <div class="service_row">
-            <img src="../assets/images/boarding.png" alt="Boarding service" class="service_image">
+            <img src="assets/images/boarding.png" alt="Boarding service" class="service_image">
             <h1>Boarding</h1>
             <p>
               A comfortable and safe environment while you are away, providing a home-like experience for your
@@ -120,7 +131,7 @@
         </div>
         <div class="main_service_row_1">
           <div class="service_row">
-            <img src="../assets/images/training.png" alt="Training service" class="service_image">
+            <img src="assets/images/training.png" alt="Training service" class="service_image">
             <h1>Training</h1>
             <p>
               Professional training sessions to help your companion learn new skills and develop good behavior.
@@ -132,7 +143,7 @@
             </a>
           </div>
           <div class="service_row">
-            <img src="../assets/images/nailclipping.png" alt="Nail clipping service" class="service_image">
+            <img src="assets/images/nailclipping.png" alt="Nail clipping service" class="service_image">
             <h1>Nail Clipping</h1>
             <p>
               Maintain healthy paws with precise and gentle regular nail clipping, ensuring comfort and care.
@@ -144,7 +155,7 @@
             </a>
           </div>
           <div class="service_row">
-            <img src="../assets/images/daycare.png" alt="Daycare service" class="service_image">
+            <img src="assets/images/daycare.png" alt="Daycare service" class="service_image">
             <h1>Daycare</h1>
             <p>
               A fun, safe, and loving environment where your companion can socialize and play while you are at work or
@@ -173,28 +184,28 @@
       </div>
       <div class="our_products_image_container">
         <div class="product_1 product_card">
-          <img src="../assets/images/grooming.png" alt="Grooming Brushes" class="product_image">
+          <img src="assets/images/grooming.png" alt="Grooming Brushes" class="product_image">
           <div class="product_info">
             <p class="product_title">Grooming Brushes</p>
             <p class="product_price">$249.00</p>
           </div>
         </div>
         <div class="product_2 product_card">
-          <img src="../assets/images/dogbiscuits.png" alt="Dog Biscuits" class="product_image">
+          <img src="assets/images/dogbiscuits.png" alt="Dog Biscuits" class="product_image">
           <div class="product_info">
             <p class="product_title">Dog Biscuit</p>
             <p class="product_price">$288.00</p>
           </div>
         </div>
         <div class="product_3 product_card">
-          <img src="../assets/images/dogbelts.png" alt="Dog Belt" class="product_image">
+          <img src="assets/images/dogbelts.png" alt="Dog Belt" class="product_image">
           <div class="product_info">
             <p class="product_title">Dog Belt</p>
             <p class="product_price">$199.00</p>
           </div>
         </div>
         <div class="product_4 product_card">
-          <img src="../assets/images/dogbowls.png" alt="Food Bowls" class="product_image">
+          <img src="assets/images/dogbowls.png" alt="Food Bowls" class="product_image">
           <div class="product_info">
             <p class="product_title">Food Bowls</p>
             <p class="product_price">$119.00</p>
@@ -217,21 +228,21 @@
       </div>
       <div class="our_vets_cards">
         <div class="vet_card vet_card--blue">
-          <img src="../assets/images/furhaven.png" alt="Fur Haven pet care manager">
+          <img src="assets/images/furhaven.png" alt="Fur Haven pet care manager">
           <div class="vet_info">
             <h2>Fur Haven</h2>
             <p>Pet Care Manager</p>
           </div>
         </div>
         <div class="vet_card vet_card--yellow">
-          <img src="../assets/images/corrieorvis.png" alt="Corrie Orvis veterinarian">
+          <img src="assets/images/corrieorvis.png" alt="Corrie Orvis veterinarian">
           <div class="vet_info">
             <h2>Corrie Orvis</h2>
             <p>Veterinarian</p>
           </div>
         </div>
         <div class="vet_card vet_card--red">
-          <img src="../assets/images/caninecomforts.png" alt="Canine Comforts dog trainer">
+          <img src="assets/images/caninecomforts.png" alt="Canine Comforts dog trainer">
           <div class="vet_info">
             <h2>Canine Comforts</h2>
             <p>Dog Trainer</p>
@@ -253,24 +264,24 @@
           <div class="gallery_picture_container">
             <div class="gallery_image_row">
               <div class="gallery_image">
-                <img src="../assets/images/dogwithwoman.png" alt="Dog with woman">
+                <img src="assets/images/dogwithwoman.png" alt="Dog with woman">
               </div>
               <div class="gallery_image">
-                <img src="../assets/images/dogpampering.png">
+                <img src="assets/images/dogpampering.png">
               </div>
               <div class="gallery_image">
-                <img src="../assets/images/dogcaring.png">
+                <img src="assets/images/dogcaring.png">
               </div>
             </div>
             <div class="gallery_image_row">
               <div class="gallery_image">
-                <img src="../assets/images/doberman.png">
+                <img src="assets/images/doberman.png">
               </div>
               <div class="gallery_image">
-                <img src="../assets/images/dogbathing.png">
+                <img src="assets/images/dogbathing.png">
               </div>
               <div class="gallery_image">
-                <img src="../assets/images/dogcaressing.png">
+                <img src="assets/images/dogcaressing.png">
               </div>
             </div>
           </div>
@@ -329,5 +340,7 @@
 
     </footer>
   </div>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
+

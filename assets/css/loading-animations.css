@@ -1,0 +1,55 @@
+/* ====================== PRELOADER ====================== */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f4f0; /* Warm cream background - matches pet theme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
+.paw-spinner {
+    font-size: 5rem;
+    animation: spin 1.2s linear infinite;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.dots::after {
+    content: ' .';
+    animation: dots 1.4s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%  { content: '   '; }
+    33% { content: ' . '; }
+    66% { content: ' ..'; }
+    100% { content: ' ...'; }
+}
+
+/* Hide preloader when done */
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

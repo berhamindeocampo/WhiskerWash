@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,10 +26,18 @@
   <link rel="stylesheet" href="assets/css/coming-soon.css">
   <link rel="stylesheet" href="assets/css/title.css">
   <link rel="stylesheet" href="assets/css/testimonials.css">
+  <link rel="stylesheet" href="assets/css/loading-animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
 </head>
 
 <body>
   <div class="homepage_container">
+        <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="paw-spinner">&#x1F43E;</div>
+            <p class="loading-text">Loading<span class="dots"></span></p>
+        </div>
+    </div>
     <header class="header">
       <a class="logo" href="homepage.html">
         <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
@@ -54,6 +62,11 @@
           Contact Us <span class="arrow">↗</span>
         </button>
       </a>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
     </header>
 
     <div class="title_section">
@@ -240,5 +253,6 @@
       </div>
 
     </footer>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

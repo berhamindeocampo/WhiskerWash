@@ -1,0 +1,297 @@
+:root {
+    /* Light Mode (Default) */
+    --bg-color: #FFFAEF;
+    --text-color: #111111;
+    --accent-color: #f4ac45;
+    --card-bg: #ffffff;
+    --nav-bg: #FFFAEF;
+    --border-color: #eee1cc;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    /* Dark Mode */
+    --bg-color: #1c1a17;
+    --text-color: #f5ede3;
+    --accent-color: #f4ac45;
+    --card-bg: #25221d;
+    --nav-bg: #1c1a17;
+    --border-color: #3d3730;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    /* Override main.css variables */
+    --page-bg: #1c1a17;
+    --header-bg: #1c1a17;
+    --header-shadow: rgba(0, 0, 0, 0.3);
+    --header-text: #f5ede3;
+    --header-link: #d1c7bc;
+    --header-link-hover: #ffffff;
+    --dropdown-bg: #25221d;
+    --dropdown-shadow: rgba(0, 0, 0, 0.4);
+    --header-button-bg: #e0952d;
+    --header-button-text: #1c1a17;
+}
+
+/* Apply transitions for smooth theme switching */
+body, 
+.header, 
+.nav_links a, 
+.header_contact_button, 
+.theme-toggle, 
+.footer_section, 
+.about_us,
+.card, 
+.service-card, 
+.product-card, 
+.blog-card,
+.service_row,
+.product_card,
+.blog_card {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navbar, .footer {
+    background-color: var(--nav-bg);
+}
+
+.card, .service-card, .product-card, .blog-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+/* Premium sliding theme toggle */
+.theme-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 66px;
+    height: 34px;
+    padding: 3px;
+    background-color: #ffd8a8; /* warm peach for light mode */
+    border: 2px solid #f4ac45; /* match WhiskerWash accent/orange */
+    border-radius: 999px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(244, 172, 69, 0.15);
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.2s ease;
+    margin-left: 8px;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Sliding active indicator bubble */
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1;
+    transform: translateX(0);
+}
+
+/* Sun and Moon icons */
+.theme-toggle .sun,
+.theme-toggle .moon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Default / Light Mode Icon States */
+.theme-toggle .sun {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 2px rgba(255, 165, 0, 0.6));
+}
+
+.theme-toggle .moon {
+    opacity: 0.4;
+    transform: scale(0.85);
+    filter: grayscale(1);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .theme-toggle {
+    background-color: #1e1e38;
+    border-color: #3f3f6b;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle::after {
+    transform: translateX(32px); /* 66px width - 2px borders - 28px thumb - 2px margin = 32px translate */
+    background: #2c2c54;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .theme-toggle .sun {
+    opacity: 0.3;
+    transform: scale(0.8);
+    filter: grayscale(1);
+}
+
+[data-theme="dark"] .theme-toggle .moon {
+    opacity: 1;
+    transform: scale(1.1) rotate(-15deg);
+    filter: drop-shadow(0 0 4px rgba(255, 223, 128, 0.6));
+}
+
+/* ==========================================================================
+   Universal Dark Mode Overrides
+   ========================================================================== */
+
+/* Main sections, containers, banners, and wrappers */
+[data-theme="dark"] .homepage_container,
+[data-theme="dark"] .hero_section,
+[data-theme="dark"] .about_us,
+[data-theme="dark"] .our_products,
+[data-theme="dark"] .gallery_container,
+[data-theme="dark"] .services_container,
+[data-theme="dark"] .our_vets,
+[data-theme="dark"] .title_section,
+[data-theme="dark"] .services_offered_container,
+[data-theme="dark"] .gallery_header_container,
+[data-theme="dark"] .testimonials_section,
+[data-theme="dark"] .coming_soon,
+[data-theme="dark"] .not_found_section,
+[data-theme="dark"] .contact_section {
+    background-color: var(--bg-color) !important;
+    background: var(--bg-color) !important;
+}
+
+/* Card components and statistics boxes */
+[data-theme="dark"] .vet_card,
+[data-theme="dark"] .product_card,
+[data-theme="dark"] .product_info,
+[data-theme="dark"] .statistic_container > div,
+[data-theme="dark"] .service_row,
+[data-theme="dark"] .step_card,
+[data-theme="dark"] .testimonial_card,
+[data-theme="dark"] .blog_card,
+[data-theme="dark"] .blog_info {
+    background-color: var(--card-bg) !important;
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+/* Headings and bold titles */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] .hero_title_wrap h1,
+[data-theme="dark"] .main_heading,
+[data-theme="dark"] .our_vets_container h1,
+[data-theme="dark"] .vet_info h2,
+[data-theme="dark"] .our_products_title,
+[data-theme="dark"] .product_title,
+[data-theme="dark"] .services_title,
+[data-theme="dark"] .service_row h1,
+[data-theme="dark"] .gallery_header h1,
+[data-theme="dark"] .title_section_left h1,
+[data-theme="dark"] .newsletter_signup_text h1 {
+    color: var(--text-color) !important;
+}
+
+/* Paragraphs, descriptions, secondary items, and subheadings */
+[data-theme="dark"] p,
+[data-theme="dark"] span:not(.sun):not(.moon):not(.arrow),
+[data-theme="dark"] .hero_message p,
+[data-theme="dark"] .subheading,
+[data-theme="dark"] .our_vets_container p,
+[data-theme="dark"] .vet_info p,
+[data-theme="dark"] .our_products_desc,
+[data-theme="dark"] .product_price,
+[data-theme="dark"] .services_subtitle,
+[data-theme="dark"] .service_row p,
+[data-theme="dark"] .gallery_header p,
+[data-theme="dark"] .copyright,
+[data-theme="dark"] .footer_link,
+[data-theme="dark"] .statistic_container p {
+    color: #bfae9a !important; /* warm muted cream */
+}
+
+/* Specific elements updates */
+[data-theme="dark"] .read_more_button {
+    color: var(--accent-color) !important;
+}
+[data-theme="dark"] .read_more_button:hover {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .email_input_bar {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .email_input_bar input {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .email_input_bar input::placeholder {
+    color: #888 !important;
+}
+
+/* Fix high-contrast text color on bright orange containers in dark mode */
+[data-theme="dark"] .footer_section .footer_desc {
+    color: #111 !important;
+}
+
+[data-theme="dark"] .footer_section .author_name {
+    color: #1f1407 !important;
+}
+
+[data-theme="dark"] .footer_section .author_signature {
+    color: #3b2b1e !important;
+}
+
+[data-theme="dark"] .footer_container h1,
+[data-theme="dark"] .footer_container .newsletter_signup_text h1,
+[data-theme="dark"] .footer_container .logo,
+[data-theme="dark"] .footer_container .link_containers a,
+[data-theme="dark"] .footer_container .contact_us_button,
+[data-theme="dark"] .footer_container .submit_btn,
+[data-theme="dark"] .footer_container .paw_icons,
+[data-theme="dark"] .footer_container .paw_icons_small {
+    color: #111111 !important;
+}
+
+[data-theme="dark"] .footer_container .copyright,
+[data-theme="dark"] .footer_container .copyright span,
+[data-theme="dark"] .footer_container .footer_link {
+    color: #111111 !important;
+    opacity: 0.85;
+}
+
+/* Ensure product cards and their info panels are dark in dark mode */
+[data-theme="dark"] .product_card,
+[data-theme="dark"] .product_card .product_info {
+    background-color: var(--card-bg) !important;
+    background: var(--card-bg) !important;
+}

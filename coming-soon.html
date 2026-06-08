@@ -24,6 +24,7 @@
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/coming-soon.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
 </head>
 
 <body>
@@ -52,6 +53,11 @@
           Contact Us <span class="arrow">↗</span>
         </button>
       </a>
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
     </header>
 
     <div class="coming_soon_page_container">
@@ -121,5 +127,6 @@
     updateCountdown();
     const timerInterval = setInterval(updateCountdown, 1000);
   </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
