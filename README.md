@@ -76,6 +76,6 @@ Since this is a client-side web application built with HTML, CSS, and JS, you ca
 
 ## ⚠️ Notice
 
-This is a practice project I created during my internship. Cloned from a Figma template with permission. Additional pages and JavaScript functionalities were added and Gemini API integration was done by me.
+This is a practice project I created during my internship. Cloned from a Figma template with permission. Additional pages and functionalities were expanded and Gemini API integration was done by me.
 
 ---
