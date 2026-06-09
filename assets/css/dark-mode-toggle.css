@@ -142,7 +142,7 @@ body {
 }
 
 [data-theme="dark"] .theme-toggle::after {
-    transform: translateX(32px); /* 66px width - 2px borders - 28px thumb - 2px margin = 32px translate */
+    transform: translateX(32px);
     background: #2c2c54;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
@@ -171,7 +171,6 @@ body {
 [data-theme="dark"] .gallery_container,
 [data-theme="dark"] .services_container,
 [data-theme="dark"] .our_vets,
-[data-theme="dark"] .title_section,
 [data-theme="dark"] .services_offered_container,
 [data-theme="dark"] .gallery_header_container,
 [data-theme="dark"] .testimonials_section,
@@ -180,6 +179,14 @@ body {
 [data-theme="dark"] .contact_section {
     background-color: var(--bg-color) !important;
     background: var(--bg-color) !important;
+}
+
+[data-theme="dark"] .title_section {
+    background: linear-gradient(135deg, #fbc673 0%, #d89a38 45%, #aa7218 100%) !important;
+}
+
+[data-theme="dark"] .title_section_left h1 {
+    color: #000000 !important;
 }
 
 /* Card components and statistics boxes */
@@ -219,6 +226,10 @@ body {
     color: var(--text-color) !important;
 }
 
+[data-theme="dark"] .title_section_left h1 {
+    color: #000000 !important;
+}
+
 /* Paragraphs, descriptions, secondary items, and subheadings */
 [data-theme="dark"] p,
 [data-theme="dark"] span:not(.sun):not(.moon):not(.arrow),
@@ -235,6 +246,22 @@ body {
 [data-theme="dark"] .footer_link,
 [data-theme="dark"] .statistic_container p {
     color: #bfae9a !important; /* warm muted cream */
+}
+
+/* Dropdown menu links in dark mode */
+[data-theme="dark"] .dropdown_menu {
+    background-color: var(--dropdown-bg) !important;
+    box-shadow: 0 24px 60px var(--dropdown-shadow) !important;
+}
+
+[data-theme="dark"] .dropdown_menu a {
+    color: #f5ede3 !important;
+}
+
+[data-theme="dark"] .dropdown_menu a:hover,
+[data-theme="dark"] .dropdown_menu a:focus-visible {
+    background-color: rgba(244, 172, 69, 0.15) !important;
+    color: #ffffff !important;
 }
 
 /* Specific elements updates */
@@ -289,9 +316,327 @@ body {
     opacity: 0.85;
 }
 
+/* Ensure contact form container is visible in dark mode */
+[data-theme="dark"] .contact_us_container,
+[data-theme="dark"] .contact_form_container {
+    background-color: rgba(255, 255, 255, -0.02) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="dark"] .contact_popup_card {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24) !important;
+}
+
+[data-theme="dark"] .form_label {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .form_input,
+[data-theme="dark"] .form_textarea,
+[data-theme="dark"] .dropdown_toggle,
+[data-theme="dark"] .dropdown_options,
+[data-theme="dark"] .option_item {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-color) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .form_input::placeholder,
+[data-theme="dark"] .form_textarea::placeholder {
+    color: #b9a88f !important;
+}
+
+[data-theme="dark"] .dropdown_options {
+    background-color: #302a23 !important;
+}
+
+[data-theme="dark"] .option_item:hover {
+    background-color: rgba(244, 172, 69, 0.14) !important;
+    color: #f5ede3 !important;
+}
+
+[data-theme="dark"] .send_message_btn {
+    background-color: #f4ac45 !important;
+    color: #111111 !important;
+}
+
 /* Ensure product cards and their info panels are dark in dark mode */
 [data-theme="dark"] .product_card,
 [data-theme="dark"] .product_card .product_info {
     background-color: var(--card-bg) !important;
     background: var(--card-bg) !important;
+}
+
+/* ==========================================================================
+   Blog Page Dark Mode Overrides
+   ========================================================================== */
+
+[data-theme="dark"] body {
+    background: var(--bg-color) !important;
+}
+
+[data-theme="dark"] .blog_hero_section {
+    background: linear-gradient(180deg, #1e1b16 0%, #1a1713 100%) !important;
+}
+
+[data-theme="dark"] .blog_hero_copy,
+[data-theme="dark"] .featured_post_card {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+[data-theme="dark"] .blog_hero_copy h2 {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .blog_intro,
+[data-theme="dark"] .featured_post_copy p {
+    color: #bfae9a !important;
+}
+
+[data-theme="dark"] .blog_eyebrow,
+[data-theme="dark"] .featured_label {
+    color: #f4ac45 !important;
+}
+
+[data-theme="dark"] .featured_post_copy h3 {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .hero_chip_row span {
+    background: rgba(244, 172, 69, 0.15) !important;
+    color: #f4ac45 !important;
+}
+
+/* Blog filter buttons */
+[data-theme="dark"] .blog_buttons button {
+    background: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .blog_buttons button.active,
+[data-theme="dark"] .blog_buttons button:hover {
+    background: linear-gradient(135deg, #f4ac45 0%, #e09030 100%) !important;
+    color: #111111 !important;
+    border-color: transparent !important;
+}
+
+/* Blog cards */
+[data-theme="dark"] .blog_card {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: var(--shadow) !important;
+}
+
+[data-theme="dark"] .blog_title {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .blog_description {
+    color: #bfae9a !important;
+}
+
+[data-theme="dark"] .blog_meta {
+    color: #8b7b6d !important;
+}
+
+[data-theme="dark"] .blog_read_more {
+    color: #f4ac45 !important;
+    border-bottom-color: #f4ac45 !important;
+}
+
+[data-theme="dark"] .blog_read_more:hover {
+    color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+}
+
+[data-theme="dark"] .blog_category_badge {
+    background: rgba(244, 172, 69, 0.18) !important;
+    color: #f4ac45 !important;
+}
+
+/* ==========================================================================
+   Testimonials Page Dark Mode Overrides
+   ========================================================================== */
+
+[data-theme="dark"] .testimonials_container,
+[data-theme="dark"] .customer_testimonials {
+    background-color: var(--bg-color) !important;
+    background: var(--bg-color) !important;
+}
+
+[data-theme="dark"] .main_message {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .sub_message {
+    color: #bfae9a !important;
+}
+
+/* Testimonial cards — keep a warm dark card look with amber accent border */
+[data-theme="dark"] .testimonial_card {
+    background: linear-gradient(135deg, #2e2820 0%, #252019 100%) !important;
+    border: 1px solid #4a3f2f !important;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .testimonial_card::before {
+    background: radial-gradient(circle, rgba(244, 172, 69, 0.08) 0%, transparent 70%) !important;
+}
+
+/* Quote icon — amber glow in dark mode */
+[data-theme="dark"] .quote_icon {
+    color: rgba(244, 172, 69, 0.3) !important;
+}
+
+/* Main testimonial text */
+[data-theme="dark"] .testimonial_text {
+    color: #e8ddd2 !important;
+}
+
+/* Author divider line */
+[data-theme="dark"] .testimonial_author_section {
+    border-top-color: rgba(244, 172, 69, 0.2) !important;
+}
+
+/* Author name and subtitle */
+[data-theme="dark"] .author_meta {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .author_subtitle {
+    color: #bfae9a !important;
+}
+
+/* Company logo text */
+[data-theme="dark"] .company_logo {
+    color: #f4ac45 !important;
+}
+
+/* Author image border */
+[data-theme="dark"] .author_image_circle {
+    border-color: #f4ac45 !important;
+    box-shadow: 0 4px 12px rgba(244, 172, 69, 0.2) !important;
+}
+
+/* ==========================================================================
+   Blog Page & Blog Article Dark Mode Styling
+   ========================================================================== */
+
+/* Page and Article Backgrounds */
+[data-theme="dark"] .blog_article {
+    background: radial-gradient(circle at top, #28241e 0%, #1c1a17 100%) !important;
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .blog_article_content {
+    background: rgba(37, 34, 29, 0.9) !important;
+    border-color: rgba(61, 55, 48, 0.9) !important;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .blog_article_content,
+[data-theme="dark"] .blog_article_content p,
+[data-theme="dark"] .blog_article_content li,
+[data-theme="dark"] .blog_article_content strong {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .blog_article_content h2,
+[data-theme="dark"] .blog_article_content h3 {
+    color: var(--text-color) !important;
+}
+
+/* Title Header Styles - Keep text dark on golden background */
+[data-theme="dark"] .title_section h1,
+[data-theme="dark"] .title_section_left h1 {
+    color: #15100b !important;
+}
+
+[data-theme="dark"] .title_section p,
+[data-theme="dark"] .title_section_left p {
+    color: #4d4339 !important;
+}
+
+/* Blog Author Info */
+[data-theme="dark"] .blog_author_box {
+    background: rgba(37, 34, 29, 0.9) !important;
+    border-color: rgba(61, 55, 48, 0.9) !important;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .blog_author_box .blog_author_and_date,
+[data-theme="dark"] .blog_author_box p {
+    color: var(--text-color) !important;
+}
+
+/* Main Blog Page listing elements */
+[data-theme="dark"] .blog_hero_section {
+    background: radial-gradient(circle at top, #28241e 0%, #1c1a17 100%) !important;
+}
+
+[data-theme="dark"] .blog_hero_copy,
+[data-theme="dark"] .featured_post_card {
+    background: rgba(37, 34, 29, 0.9) !important;
+    border-color: rgba(61, 55, 48, 0.9) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .blog_intro,
+[data-theme="dark"] .featured_post_copy p {
+    color: #bfae9a !important;
+}
+
+[data-theme="dark"] .blog_hero_copy h2,
+[data-theme="dark"] .featured_post_copy h3 {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .blog_eyebrow,
+[data-theme="dark"] .featured_label {
+    color: var(--accent-color) !important;
+}
+
+[data-theme="dark"] .hero_chip_row span {
+    background: rgba(244, 172, 69, 0.15) !important;
+    color: var(--accent-color) !important;
+}
+
+[data-theme="dark"] .blog_category_badge {
+    background: rgba(244, 172, 69, 0.2) !important;
+    color: var(--accent-color) !important;
+    border: 1px solid rgba(244, 172, 69, 0.3) !important;
+}
+
+/* Category filter buttons */
+[data-theme="dark"] .blog_buttons button {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .blog_buttons button.active,
+[data-theme="dark"] .blog_buttons button:hover {
+    background: var(--accent-color) !important;
+    color: #1c1a17 !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 14px 24px rgba(244, 172, 69, 0.25) !important;
+}
+
+/* Read More Links */
+[data-theme="dark"] .blog_read_more {
+    color: var(--accent-color) !important;
+    border-bottom-color: var(--accent-color) !important;
+}
+
+[data-theme="dark"] .blog_read_more:hover {
+    color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
 }

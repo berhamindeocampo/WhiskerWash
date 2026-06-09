@@ -49,10 +49,11 @@ function setTheme(theme) {
     // Swap logo based on theme
     const logoImg = document.querySelector('.logo img');
     if (logoImg) {
-        // Detect if page is in a subdirectory by checking existing src prefix
-        const isSubDir = logoImg.src.includes('/blog/') ||
-                         logoImg.src.includes('/products/') ||
-                         logoImg.src.includes('/services/');
+        // Detect if page is in a subdirectory by checking pathname or image src attribute
+        const isSubDir = window.location.pathname.includes('/blog/') ||
+                         window.location.pathname.includes('/products/') ||
+                         window.location.pathname.includes('/services/') ||
+                         (logoImg.getAttribute('src') && logoImg.getAttribute('src').startsWith('../'));
         const basePath = isSubDir ? '../assets/images/' : 'assets/images/';
 
         if (theme === 'dark') {
@@ -73,3 +74,20 @@ if (themeToggle) {
         setTheme(isDark ? 'light' : 'dark');
     });
 }
+
+// ====================== DYNAMIC CHATBOT LOAD ======================
+document.addEventListener("DOMContentLoaded", () => {
+    // Determine the base path depending on subdirectory depth
+    const isSubDir = window.location.pathname.includes('/blog/') ||
+                     window.location.pathname.includes('/products/') ||
+                     window.location.pathname.includes('/services/');
+    const basePath = isSubDir ? '../' : '';
+
+    // Check if chatbot.js is already imported
+    if (!document.querySelector('script[src*="chatbot.js"]')) {
+        const chatScript = document.createElement('script');
+        chatScript.src = basePath + 'assets/js/chatbot.js';
+        chatScript.defer = true;
+        document.body.appendChild(chatScript);
+    }
+});

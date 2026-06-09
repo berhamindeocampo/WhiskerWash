@@ -1,6 +1,6 @@
 # 🐾 WhiskerWash
 
-> Where Happy Pets Meet Expert Care! 
+> Where Happy Pets Meet Expert Care!
 
 **WhiskerWash** is a premium, responsive multi-page web application designed for a pet care center and pet product store. It showcases professional pet services (grooming, daycare, boarding, training, walking) and offers an integrated online product catalog for pet owners.
 
@@ -20,6 +20,7 @@
 - **📝 Pet Care Blog**: Informative articles on dog health, training tips, and general pet wellbeing.
 - **💬 Testimonials**: Real-world reviews from happy pet owners.
 - **📞 Contact & Booking**: Integrated, user-friendly contact form with validation for booking inquiries.
+- **🤖 AI Chatbot**: AI-powered chatbot that can answer questions about products and services, and can also provide information about the website and its content.
 
 ---
 
@@ -28,6 +29,7 @@
 - **Structure**: Semantic HTML5
 - **Styling**: Modern, responsive Vanilla CSS
 - **Interactions**: Vanilla JavaScript for forms, validations, and interactive components
+- **AI**: Google Gemini API for AI-powered chatbot
 
 ---
 
@@ -56,9 +58,11 @@ WhiskerWash/
 ## 🚀 Getting Started
 
 ### Local Setup
+
 Since this is a client-side web application built with HTML, CSS, and JS, you can run it instantly without any build setup:
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/berhamindeocampo/WhiskerWash.git
    cd WhiskerWash
@@ -72,4 +76,6 @@ Since this is a client-side web application built with HTML, CSS, and JS, you ca
 
 ## ⚠️ Notice
 
-This is a practice project I created during my internship. Cloned from a Figma template I have gained permission to.
+This is a practice project I created during my internship. Cloned from a Figma template with permission. Additional pages and JavaScript functionalities were added and Gemini API integration was done by me.
+
+---

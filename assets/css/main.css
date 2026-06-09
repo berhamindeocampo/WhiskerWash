@@ -1,6 +1,3 @@
-/* ==========================================
-   Global Whisker Wash Styles & Shared Layouts
-   ========================================== */
 
 * {
   margin: 0;
@@ -33,16 +30,38 @@
   }
 }
 
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 2000;
+}
+
+body.page-transition-ready .page-transition-overlay {
+  opacity: 0;
+}
+
+body.page-transition-exit .page-transition-overlay {
+  opacity: 1;
+}
+
+body.page-transition-ready {
+  overflow-x: hidden;
+}
+
+.page-transition-overlay {
+  background: #fffaef;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: var(--page-bg);
   color: var(--header-text);
-  animation: globalEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* ==========================================
-   Header & Sticky Navigation Bar
-   ========================================== */
 .header {
   position: sticky;
   top: 0;
@@ -235,6 +254,7 @@ img {
   max-width: none;
   margin: 0;
   padding: 0;
+  animation: globalEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ==========================================
