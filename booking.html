@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/about-us.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/our-vets.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+  <link rel="stylesheet" href="assets/css/our-products.css">
+  <link rel="stylesheet" href="assets/css/title.css">
+  <link rel="stylesheet" href="assets/css/loading-animations.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
+  <link rel="stylesheet" href="assets/css/booking.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <title>Booking - WhiskerWash</title>
+</head> 
+<body>
+<script src="assets/js/booking.js"></script>
+  <div class="homepage_container">
+        <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="paw-spinner">&#x1F43E;</div>
+            <p class="loading-text">Loading<span class="dots"></span></p>
+        </div>
+    </div>
+    <header class="header">
+      <a class="logo" href="homepage.html">
+        <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
+      </a>
+      <nav class="nav_links">
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="about-us.html" class="active">About</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li class="dropdown">
+            <a href="#">Pages</a>
+            <ul class="dropdown_menu">
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="./our-products.html">Products</a></li>
+        </ul>
+      </nav>
+      <a href="contact-us.html">
+        <button class="header_contact_button">
+          Contact Us <span class="arrow">↗</span>
+        </button>
+      </a>
+
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+    </header>
+
+    <div class="title_section">
+        <div class="title_section_container">
+          <div class="title_section_left">
+            <h1>Book an Appointment</h1>
+          </div>
+        </div>
+    </div>
+
+    <div class="booking_container">
+      <div class="booking_left">
+      <h2>1. Select Date & Time</h2>
+      <div class="calendar_wrapper">
+        <div class="calendar_header">
+                 <button id="prevMonth" class="month_nav_btn">&lt;</button> 
+                 <h3 id="currentMonthYear">June 2026</h3>
+            <button id="nextMonth" class="month_nav_btn">&gt;</button>
+        </div>
+        <div class="calendar_grid">
+            <div class="day_name">Sun</div>
+            <div class="day_name">Mon</div>
+            <div class="day_name">Tue</div>
+            <div class="day_name">Wed</div>
+            <div class="day_name">Thu</div>
+            <div class="day_name">Fri</div>
+            <div class="day_name">Sat</div> 
+        </div> 
+        <div id="calendarDays" class="calendar_days_container"></div>
+        <div class="time_slots_wrapper">
+          <h3>Available Times</h3>
+          <div id="timeSlots" class="time_slots_grid">
+            <p class="placeholder_text">Please select a date first.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="booking_right">
+        <h2>2. Pet Details</h2>
+        <form id="bookingForm" class="booking_form">
+          <div class="form_group">
+            <label class="form_label">Service Needed</label>
+            <div class="custom_dropdown" id="bookingServiceDropdown">
+              <div class="dropdown_toggle">
+                <span class="selected_value">Choose Service</span>
+                <span class="dropdown_arrow">▼</span>
+              </div>
+              <ul class="dropdown_options">
+                <li class="option_item" data-value="grooming">Grooming</li>
+                <li class="option_item" data-value="walking">Walking</li>
+                <li class="option_item" data-value="boarding">Boarding</li>
+                <li class="option_item" data-value="daycare">Daycare</li>
+              </ul>
+              <input type="hidden" name="service" id="bookingService" required>
+            </div>
+          </div>
+          
+          <div class="form_group">
+            <label class="form_label">Pet's Name</label>
+            <input type="text" id="petName" class="form_input" placeholder="e.g. Max" required>
+          </div>
+          <div class="form_group">
+            <label class="form_label">Owner's Name</label>
+            <input type="text" id="ownerName" class="form_input" placeholder="e.g. Jane Doe" required>
+          </div>
+          <div class="form_group">
+            <label class="form_label">Any Special Requests?</label>
+            <textarea id="specialRequests" class="form_textarea" placeholder="Allergies, preferences..."></textarea>
+          </div>
+          <div class="booking_summary">
+            <h3>Summary</h3>
+            <p><strong>Date:</strong> <span id="summaryDate">Not selected</span></p>
+            <p><strong>Time:</strong> <span id="summaryTime">Not selected</span></p>
+          </div>
+          <button type="submit" id="confirmBookingBtn" class="confirm_booking_btn" disabled>
+            Confirm Appointment <span class="arrow">↗</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>
+
+    <footer class="footer_container">
+      <div class="footer_row footer_top_row">
+        <div class="newsletter_signup_text">
+          <h1>Newsletter<br>Signup <span class="paw_icons">🐾</span></h1>
+        </div>
+
+        <div class="email_and_social_section">
+          <div class="email_input_bar">
+            <input type="email" placeholder="Your Email Address">
+            <button class="submit_btn">Submit <span class="arrow">↗</span></button>
+          </div>
+
+          <div class="social_media_icons">
+            <a href="#" class="social_icon">in</a>
+            <a href="#" class="social_icon">✈</a>
+            <a href="#" class="social_icon">𝕏</a>
+            <a href="#" class="social_icon">f</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_row footer_middle_row">
+        <div class="logo">
+          Whisker<br>Wash <span class="paw_icons_small">🐾</span>
+        </div>
+
+        <div class="nav_and_contact_wrapper">
+          <nav class="link_containers">
+            <a href="#">Who We Are?</a>
+            <a href="#">Help</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+          </nav>
+
+          <div class="primary_button">
+            <a href="#" class="contact_us_button">Contact Us <span class="arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom_section">
+        <p class="copyright">© 2026 WhiskerWash. All Rights Reserved.</p>
+        <div class="footer_links_section">
+          <a class="footer_link" href="#">Privacy Policy</a>
+          <a class="footer_link" href="#">Terms of use</a>
+        </div>
+      </div>
+    </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

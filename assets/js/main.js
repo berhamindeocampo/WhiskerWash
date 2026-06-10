@@ -91,3 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(chatScript);
     }
 });
+
+// ====================== DYNAMIC CART LOAD ======================
+document.addEventListener("DOMContentLoaded", () => {
+    const isSubDir = window.location.pathname.includes('/blog/') ||
+                     window.location.pathname.includes('/products/') ||
+                     window.location.pathname.includes('/services/');
+    const basePath = isSubDir ? '../' : '';
+
+    if (!document.querySelector('script[src*="cart.js"]')) {
+        const cartScript = document.createElement('script');
+        cartScript.src = basePath + 'assets/js/cart.js';
+        cartScript.defer = true;
+        document.body.appendChild(cartScript);
+    }
+});

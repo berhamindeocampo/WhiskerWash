@@ -1,6 +1,6 @@
 .title_section {
     font-family: Bayon, sans-serif;
-    background-color: #fbc673; /* Orange/Yellow banner color */
+    background: linear-gradient(135deg, #fbc673 0%, #f4ac45 50%, #e89b25 100%);
     width: 100%;
     padding: 60px 0;
     display: flex;

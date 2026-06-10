@@ -60,6 +60,8 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: var(--page-bg);
   color: var(--header-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .header {
@@ -102,7 +104,14 @@ body {
 }
 
 .nav_links {
-  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header > a[href="contact-us.html"],
+.header > button.header_contact_button {
+  margin-left: auto;
 }
 
 .nav_links ul {
@@ -585,6 +594,8 @@ img {
   .nav_links {
     order: 3;
     width: 100%;
+    position: static;
+    transform: none;
   }
   .nav_links ul {
     flex-wrap: wrap;

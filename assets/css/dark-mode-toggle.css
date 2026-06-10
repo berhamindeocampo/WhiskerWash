@@ -205,6 +205,13 @@ body {
     box-shadow: var(--shadow) !important;
 }
 
+/* Hero Badge (Star shape) */
+[data-theme="dark"] .hero_badge {
+    background: var(--accent-color) !important;
+    color: #111111 !important;
+    box-shadow: 0 12px 36px rgba(244, 172, 69, 0.25) !important;
+}
+
 /* Headings and bold titles */
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,

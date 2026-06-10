@@ -1,0 +1,562 @@
+/* ==========================================================================
+   WhiskerWash — Cart Drawer & Cart Icon Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Cart Icon Button (injected into header)
+   -------------------------------------------------------------------------- */
+.ww_cart_btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: #f6c877;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(246, 200, 119, 0.35);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  flex-shrink: 0;
+  margin-left: 8px;
+  font-size: 1.25rem;
+}
+
+.ww_cart_btn:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 10px 24px rgba(246, 200, 119, 0.45);
+}
+
+.ww_cart_btn:active {
+  transform: scale(0.94);
+}
+
+/* Badge */
+.ww_cart_badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: #e5453a;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 250ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ww_cart_badge.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ww_cart_badge.pop {
+  animation: badgePop 320ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes badgePop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.45); }
+  100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   2. Backdrop Overlay
+   -------------------------------------------------------------------------- */
+.ww_cart_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 10, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 9000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 380ms ease;
+}
+
+.ww_cart_overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. Drawer Panel
+   -------------------------------------------------------------------------- */
+.ww_cart_drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: min(420px, 100vw);
+  background: var(--card-bg, #ffffff);
+  box-shadow: -16px 0 60px rgba(0, 0, 0, 0.14);
+  z-index: 9001;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 28px 0 0 28px;
+  overflow: hidden;
+}
+
+.ww_cart_drawer.open {
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   4. Drawer Header
+   -------------------------------------------------------------------------- */
+.ww_cart_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid var(--border-color, #eee1cc);
+  flex-shrink: 0;
+}
+
+.ww_cart_header h2 {
+  font-family: 'Bayon', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--text-color, #111);
+  margin: 0;
+}
+
+.ww_cart_header_meta {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0;
+}
+
+.ww_cart_close_btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--border-color, #f0e8da);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text-color, #555);
+  transition: background 200ms ease, transform 200ms ease;
+  flex-shrink: 0;
+}
+
+.ww_cart_close_btn:hover {
+  background: #f4c46a;
+  color: #111;
+  transform: rotate(90deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. Drawer Body — Scrollable item list
+   -------------------------------------------------------------------------- */
+.ww_cart_body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: #f4c46a transparent;
+}
+
+.ww_cart_body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ww_cart_body::-webkit-scrollbar-thumb {
+  background: #f4c46a;
+  border-radius: 99px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Empty Cart State
+   -------------------------------------------------------------------------- */
+.ww_cart_empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.ww_cart_empty_icon {
+  font-size: 3.5rem;
+  animation: floatPaw 3s ease-in-out infinite;
+}
+
+@keyframes floatPaw {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.ww_cart_empty h3 {
+  font-family: 'Bayon', cursive;
+  font-size: 1.4rem;
+  color: var(--text-color, #111);
+  margin: 0;
+}
+
+.ww_cart_empty p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
+  max-width: 220px;
+}
+
+.ww_cart_shop_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 10px 22px;
+  background: #f6c877;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 6px 16px rgba(246, 200, 119, 0.35);
+}
+
+.ww_cart_shop_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(246, 200, 119, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   7. Cart Item Row
+   -------------------------------------------------------------------------- */
+.ww_cart_item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-bg, #fffaf3);
+  border: 1px solid var(--border-color, #f0e8da);
+  border-radius: 18px;
+  padding: 12px 14px;
+  transition: box-shadow 220ms ease, transform 220ms ease;
+  animation: itemSlideIn 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes itemSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ww_cart_item:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+  transform: translateY(-1px);
+}
+
+/* Item thumbnail */
+.ww_cart_item_img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: linear-gradient(180deg, #fff4e0 0%, #ffd9a3 100%);
+  flex-shrink: 0;
+}
+
+/* Item details block */
+.ww_cart_item_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ww_cart_item_name {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-color, #111);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.ww_cart_item_price {
+  font-family: 'Bayon', cursive;
+  font-size: 1rem;
+  color: #c77d10;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+/* Qty stepper */
+.ww_cart_qty_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.ww_qty_btn {
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid var(--border-color, #e0d4c0);
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color, #555);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.ww_qty_btn:hover {
+  background: #f6c877;
+  border-color: #f6c877;
+  color: #111;
+}
+
+.ww_cart_qty_count {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-color, #111);
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Remove button */
+.ww_cart_remove_btn {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 180ms ease, color 180ms ease;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.ww_cart_remove_btn:hover {
+  background: #ffe0e0;
+  color: #e5453a;
+}
+
+/* --------------------------------------------------------------------------
+   8. Drawer Footer — Subtotal + Checkout
+   -------------------------------------------------------------------------- */
+.ww_cart_footer {
+  flex-shrink: 0;
+  padding: 18px 24px 24px;
+  border-top: 1px solid var(--border-color, #eee1cc);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--card-bg, #ffffff);
+}
+
+.ww_cart_subtotal_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ww_cart_subtotal_label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+.ww_cart_subtotal_value {
+  font-family: 'Bayon', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--text-color, #111);
+  margin: 0;
+}
+
+.ww_cart_checkout_btn {
+  width: 100%;
+  padding: 15px 24px;
+  background: linear-gradient(135deg, #f6c877 0%, #e8a832 100%);
+  border: none;
+  border-radius: 999px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(246, 200, 119, 0.4);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ww_cart_checkout_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(246, 200, 119, 0.5);
+}
+
+.ww_cart_checkout_btn:active {
+  transform: scale(0.97);
+}
+
+.ww_cart_clear_btn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1.5px solid var(--border-color, #e8ddc8);
+  border-radius: 999px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #999;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.ww_cart_clear_btn:hover {
+  background: #fff0f0;
+  border-color: #f4a9a9;
+  color: #d94f4f;
+}
+
+/* --------------------------------------------------------------------------
+   9. Add to Cart button — success flash animation
+   -------------------------------------------------------------------------- */
+.add_to_cart.ww_added {
+  background-color: #5cb85c !important;
+  color: #fff !important;
+  box-shadow: 0 10px 24px rgba(92, 184, 92, 0.35) !important;
+  transition: background-color 200ms ease, color 200ms ease !important;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   10. Dark Mode Overrides
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .ww_cart_btn {
+  background: #c88d20;
+  box-shadow: 0 6px 18px rgba(200, 141, 32, 0.3);
+}
+
+[data-theme="dark"] .ww_cart_drawer {
+  background: #25221d;
+  box-shadow: -16px 0 60px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .ww_cart_header {
+  border-bottom-color: #3d3730;
+}
+
+[data-theme="dark"] .ww_cart_footer {
+  border-top-color: #3d3730;
+  background: #25221d;
+}
+
+[data-theme="dark"] .ww_cart_item {
+  background: #2e2820;
+  border-color: #3d3730;
+}
+
+[data-theme="dark"] .ww_cart_item:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .ww_cart_close_btn {
+  background: #3d3730;
+  color: #f5ede3;
+}
+
+[data-theme="dark"] .ww_cart_close_btn:hover {
+  background: #f4ac45;
+  color: #111;
+}
+
+[data-theme="dark"] .ww_qty_btn {
+  border-color: #4a3f30;
+  color: #d1c7bc;
+}
+
+[data-theme="dark"] .ww_qty_btn:hover {
+  background: #f4ac45;
+  border-color: #f4ac45;
+  color: #111;
+}
+
+[data-theme="dark"] .ww_cart_remove_btn:hover {
+  background: rgba(229, 69, 58, 0.2);
+  color: #ff7875;
+}
+
+[data-theme="dark"] .ww_cart_clear_btn {
+  border-color: #4a3f30;
+  color: #8b7b6d;
+}
+
+[data-theme="dark"] .ww_cart_clear_btn:hover {
+  background: rgba(229, 69, 58, 0.1);
+  border-color: rgba(229, 69, 58, 0.4);
+  color: #ff9999;
+}
+
+[data-theme="dark"] .ww_cart_subtotal_value {
+  color: #f5ede3;
+}
+
+[data-theme="dark"] .ww_cart_item_price {
+  color: #f4ac45;
+}
+
+[data-theme="dark"] .ww_cart_overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   11. Hide chatbot when cart drawer is open
+   -------------------------------------------------------------------------- */
+.ww-cart-open .chat-toggle,
+.ww-cart-open .chat-window {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(20px) !important;
+  transition: opacity 250ms ease, transform 250ms ease !important;
+}

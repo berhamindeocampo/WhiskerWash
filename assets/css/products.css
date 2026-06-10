@@ -118,6 +118,102 @@
   background-image: linear-gradient(180deg, #eaf8d8 0%, #c7edab 100%);
 }
 
+/* --------------------------------------------------------------------------
+   Add to Cart — Product Card Button (listing pages)
+   -------------------------------------------------------------------------- */
+.ww_card_wrap {
+  position: relative;
+}
+
+.ww_card_atc_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  background: linear-gradient(135deg, #f6c877 0%, #e8a832 100%);
+  color: #111;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 280ms ease,
+              color 280ms ease,
+              box-shadow 280ms ease,
+              transform 280ms ease;
+}
+
+.ww_card_atc_btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e8a832 0%, #d4911a 100%);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.ww_card_atc_btn:hover {
+  box-shadow: 0 6px 20px rgba(232, 168, 50, 0.4);
+  transform: translateY(-1px);
+}
+
+.ww_card_atc_btn:hover::before {
+  opacity: 1;
+}
+
+.ww_card_atc_btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(232, 168, 50, 0.3);
+}
+
+/* Keep text above the ::before overlay */
+.ww_card_atc_btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* The emoji + text itself also needs z-index since it's direct text content */
+.ww_card_atc_btn {
+  z-index: 0;
+}
+
+/* Clip the button inside the card's rounded corners */
+.ww_card_wrap.product_card {
+  overflow: hidden;
+}
+
+/* Success flash when added */
+.ww_card_atc_btn.ww_added {
+  background: linear-gradient(135deg, #5cb85c 0%, #48a648 100%) !important;
+  color: #fff !important;
+  pointer-events: none;
+}
+
+.ww_card_atc_btn.ww_added::before {
+  opacity: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode — Add to Cart Button
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .ww_card_atc_btn {
+  background: linear-gradient(135deg, #c88d20 0%, #a87318 100%);
+  color: #fff;
+}
+
+[data-theme="dark"] .ww_card_atc_btn::before {
+  background: linear-gradient(135deg, #a87318 0%, #8a5e10 100%);
+}
+
+[data-theme="dark"] .ww_card_atc_btn:hover {
+  box-shadow: 0 6px 20px rgba(168, 115, 24, 0.4);
+}
+
 /* --- Product Details Section --- */
 .product_details_container {
   max-width: 1200px;
