@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "YOUR_API_KEY_HERE";
+const GEMINI_API_KEY = "YOUR_API_KEY_HERE"; // ⚠️ Replace with your actual key — do NOT commit real keys to git
 
 const SYSTEM_PROMPT = `You are Whisker Assistant 🐾, the official AI helper for WhiskerWash — a premium pet care brand. You have full knowledge of the WhiskerWash website and its content. Be warm, friendly, concise, and use emojis naturally. Always answer accurately using the information below.
 
@@ -104,7 +104,7 @@ function initChatbot() {
             <button id="chat-toggle" class="chat-toggle">
                 🐾 Ask Whisker
             </button>
-            <div id="chat-window" class="chat-window hidden">
+            <div id="chat-window" class="chat-window hidden" style="opacity:0;pointer-events:none;transform:scale(0.85) translateY(40px);">
                 <div class="chat-header">
                     <h3>🐾 Whisker Assistant</h3>
                     <button id="close-chat" class="close-btn">✕</button>
@@ -158,10 +158,15 @@ function initChatbot() {
     if (toggleBtn && chatWindow) {
         toggleBtn.addEventListener('click', () => {
             chatWindow.classList.toggle('hidden');
-            if (!chatWindow.classList.contains('hidden') && !hasOpenedBefore) {
-                // Add initial welcome message
-                addChatMessage("Hi there! I'm Whisker Assistant. 🐾 How can I help you and your furry friend today?", 'bot');
-                hasOpenedBefore = true;
+            // Clear inline safety styles so CSS transitions take over
+            if (!chatWindow.classList.contains('hidden')) {
+                chatWindow.style.opacity = '';
+                chatWindow.style.pointerEvents = '';
+                chatWindow.style.transform = '';
+                if (!hasOpenedBefore) {
+                    addChatMessage("Hi there! I'm Whisker Assistant. 🐾 How can I help you and your furry friend today?", 'bot');
+                    hasOpenedBefore = true;
+                }
             }
         });
     }
