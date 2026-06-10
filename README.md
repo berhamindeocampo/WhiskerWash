@@ -20,6 +20,7 @@
 - **📝 Pet Care Blog**: Informative articles on dog health, training tips, and general pet wellbeing.
 - **💬 Testimonials**: Real-world reviews from happy pet owners.
 - **📞 Contact & Booking**: Integrated, user-friendly contact form with validation for booking inquiries.
+- **📖 Appointment Booking: Appoint your preferred date and time.
 - **🤖 AI Chatbot**: AI-powered chatbot that can answer questions about products and services, and can also provide information about the website and its content.
 
 ---
