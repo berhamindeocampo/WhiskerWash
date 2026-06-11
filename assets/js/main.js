@@ -106,3 +106,43 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(cartScript);
     }
 });
+
+// ====================== HAMBURGER MENU TOGGLE ======================
+document.addEventListener("DOMContentLoaded", () => {
+    // Add page transition ready to all pages to prevent them from being hidden indefinitely
+    document.body.classList.add('page-transition-ready');
+
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const navOverlay = document.getElementById('nav-overlay');
+    const header = document.querySelector('.header');
+
+    if (hamburgerBtn && navOverlay) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('open');
+            navOverlay.classList.toggle('open');
+            if (header) header.classList.toggle('menu-open');
+            
+            // Prevent scrolling when menu is open and compensate for scrollbar width
+            if (navOverlay.classList.contains('open')) {
+                const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                document.body.style.paddingRight = scrollbarWidth + 'px';
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.paddingRight = '';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when a link is clicked
+        const navLinks = navOverlay.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                navOverlay.classList.remove('open');
+                if (header) header.classList.remove('menu-open');
+                document.body.style.paddingRight = '';
+                document.body.style.overflow = '';
+            });
+        });
+    }
+});

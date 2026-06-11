@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bayon&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
+  <link rel="stylesheet" href="assets/css/chatbot.css">
+  <link rel="stylesheet" href="assets/css/my-bookings.css">
+  <link rel="stylesheet" href="assets/css/account.css">
+  <title>Account Center - WhiskerWash</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+  <div class="homepage_container">
+    <header class="header">
+      <a class="logo" href="index.html">
+        <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
+      </a>
+
+      <div class="header_right_actions">
+        <a href="account.html" class="account_icon_btn" aria-label="Account Center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </button> 
+
+        <button class="hamburger-btn" id="hamburger-menu" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="page-transition-overlay"></div>
+    </header>
+
+    <!-- Hamburger Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay">
+      <nav class="overlay-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li><a href="our-products.html">Products</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="account-container fade-in">
+      <h1 class="account-title">Account Center</h1>
+      
+      <div class="account-grid">
+        <!-- Profile Section -->
+        <div class="account-card profile-section">
+          <h2>🐾 Profile Details</h2>
+          <div class="profile-info">
+            <div class="info-group">
+              <label>Name</label>
+              <input type="text" id="profile-name" placeholder="E.g., Jane Doe" value="Jane Doe">
+            </div>
+            <div class="info-group">
+              <label>Email</label>
+              <input type="email" id="profile-email" placeholder="E.g., jane@example.com" value="jane@example.com">
+            </div>
+            <div class="info-group">
+              <label>Pet's Name</label>
+              <input type="text" id="profile-pet" placeholder="E.g., Max" value="Max">
+            </div>
+            <button id="save-profile-btn" class="save-btn">Save Changes <span class="arrow">↗</span></button>
+          </div>
+        </div>
+
+        <!-- Bookings Section -->
+        <div class="account-card bookings-section">
+          <h2>📅 My Bookings</h2>
+          <div id="account-bookings-list" class="bookings-list">
+            <!-- Bookings will be dynamically injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer_container">
+      <div class="footer_row footer_top_row">
+        <div class="newsletter_signup_text">
+          <h1>Newsletter<br>Signup <span class="paw_icons">🐾</span></h1>
+        </div>
+
+        <div class="email_and_social_section">
+          <div class="email_input_bar">
+            <input type="email" placeholder="Your Email Address">
+            <button class="submit_btn">Submit <span class="arrow">↗</span></button>
+          </div>
+
+          <div class="social_media_icons">
+            <a href="#" class="social_icon">in</a>
+            <a href="#" class="social_icon">✈</a>
+            <a href="#" class="social_icon">𝕏</a>
+            <a href="#" class="social_icon">f</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_row footer_middle_row">
+        <div class="logo">
+          Whisker<br>Wash <span class="paw_icons_small">🐾</span>
+        </div>
+
+        <div class="nav_and_contact_wrapper">
+          <nav class="link_containers">
+            <a href="#">Who We Are?</a>
+            <a href="#">Help</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+          </nav>
+
+          <div class="primary_button">
+            <a href="#" class="contact_us_button">Contact Us <span class="arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom_section">
+        <p class="copyright">© 2026 WhiskerWash. All Rights Reserved.</p>
+        <div class="footer_links_section">
+          <a class="footer_link" href="#">Privacy Policy</a>
+          <a class="footer_link" href="#">Terms of use</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/account.js"></script>
+</body>
+</html>

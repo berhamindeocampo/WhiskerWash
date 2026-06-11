@@ -67,7 +67,7 @@ body {
 .header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 3000;
   width: 100vw;
   margin-left: calc((100% - 100vw) / 2);
   display: flex;
@@ -77,6 +77,12 @@ body {
   padding: var(--header-padding);
   background-color: var(--header-bg);
   box-shadow: 0 10px 35px var(--header-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.menu-open {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .logo img {
@@ -704,4 +710,125 @@ img {
   .header_contact_button {
     padding: 14px 20px;
   }
+}
+
+/* --- Hamburger & Account Header Updates --- */
+.header_right_actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.account_icon_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--header-link);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 200ms ease, color 200ms ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.account_icon_btn:hover {
+  transform: scale(1.1);
+  color: var(--header-link-hover);
+  background: rgba(0,0,0,0.05);
+}
+
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2500;
+  padding: 0;
+}
+.hamburger-btn span {
+  width: 100%;
+  height: 3px;
+  background: var(--header-link);
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Hamburger Open State */
+.hamburger-btn.open span:first-child {
+  transform: rotate(45deg);
+}
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Fullscreen Overlay */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 250, 239, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  padding: 100px 20px 60px 20px;
+}
+.nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay-nav {
+  margin: auto;
+  width: 100%;
+}
+
+.overlay-nav ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+.overlay-nav a {
+  font-family: 'Bayon', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--header-text);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+.overlay-nav a:hover {
+  color: #f4b559;
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .nav-overlay {
+  background: rgba(17, 17, 17, 0.95);
+}
+[data-theme="dark"] .hamburger-btn span,
+[data-theme="dark"] .account_icon_btn {
+  color: #f5f5f5;
+  background-color: transparent;
+}
+[data-theme="dark"] .hamburger-btn span {
+  background-color: #f5f5f5;
 }

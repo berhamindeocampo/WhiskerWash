@@ -19,6 +19,7 @@
   rel="stylesheet">
 
   <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/products.css">
   <link rel="stylesheet" href="../assets/css/product-details.css">
   <link rel="stylesheet" href="../assets/css/title.css">
@@ -39,35 +40,48 @@
     </div>
   <div class="homepage_container">
     <header class="header">
-      <a class="logo" href="../homepage.html">
+      <a class="logo" href="../index.html">
         <img src="../assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
       </a>
-      <nav class="nav_links">
+
+      <div class="header_right_actions">
+        <a href="../account.html" class="account_icon_btn" aria-label="Account Center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </button> 
+
+        <button class="hamburger-btn" id="hamburger-menu" aria-label="Open Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="page-transition-overlay"></div>
+    </header>
+
+    <!-- Hamburger Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay">
+      <nav class="overlay-nav">
         <ul>
-          <li><a href="../homepage.html">Home</a></li>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="../about-us.html">About</a></li>
-          <li><a href="../services/our-services.html">Services</a></li>
-          <li class="dropdown">
-            <a href="#">Pages</a>
-            <ul class="dropdown_menu">
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </li>
-          <li><a href="../products/our-products.html" class="active">Products</a></li>
+          <li><a href="../our-services.html">Services</a></li>
+          <li><a href="../our-products.html">Products</a></li>
+          <li><a href="../testimonials.html">Testimonials</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../booking.html">Booking</a></li>
+          <li><a href="../contact-us.html">Contact Us</a></li>
         </ul>
       </nav>
-      <a href="../contact-us.html">
-        <button class="header_contact_button">
-          Contact Us <span class="arrow">↗</span>
-        </button>
-      </a>
-      <!-- Dark Mode Toggle -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-        <span class="sun">☀️</span>
-        <span class="moon">🌙</span>
-      </button>
-    </header>
+    </div>
 
     <div class="title_section">
         <div class="title_section_container">

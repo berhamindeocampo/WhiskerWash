@@ -204,9 +204,29 @@ document.addEventListener('DOMContentLoaded', () => {
       service, petName, ownerName, date: summaryDate.textContent, time: selectedTimeStr
     });
 
+    // Save booking to localStorage
+    const newBooking = {
+      id: Date.now().toString(),
+      service,
+      petName,
+      ownerName,
+      date: summaryDate.textContent,
+      time: selectedTimeStr,
+      timestamp: new Date().toISOString()
+    };
+    
+    let savedBookings = [];
+    try {
+      savedBookings = JSON.parse(localStorage.getItem('whiskerWashBookings') || '[]');
+    } catch (e) {
+      savedBookings = [];
+    }
+    savedBookings.push(newBooking);
+    localStorage.setItem('whiskerWashBookings', JSON.stringify(savedBookings));
+
     // Alert the user and redirect back to homepage
     alert(`🎉 Booking Confirmed!\n\nWe will see ${petName} on ${summaryDate.textContent} at ${selectedTimeStr} for ${service}.`);
-    window.location.href = 'homepage.html';
+    window.location.href = 'index.html';
   });
 
 });

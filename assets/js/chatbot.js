@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "";
+const GEMINI_API_KEY = "AQ.Ab8RN6IyHqI0gMCJdbp-FcODHMA3vFwFNGM1t1n_4mKyj3XyhA"; //Add you API key here
 
 const SYSTEM_PROMPT = `You are Whisker Assistant 🐾, the official AI helper for WhiskerWash — a premium pet care brand. You have full knowledge of the WhiskerWash website and its content. Be warm, friendly, concise, and use emojis naturally. Always answer accurately using the information below.
 
@@ -57,13 +57,13 @@ The blog is at blog.html and covers these articles:
 ---
 
 ## WEBSITE NAVIGATION
-- **Home** → homepage.html
-- **About Us** → about-us.html
-- **Services** → our-services.html
-- **Testimonials** → testimonials.html
-- **Blog** → blog.html
-- **Products** → our-products.html
-- **Contact Us** → contact-us.html
+- Home → index.html
+- About Us → about-us.html
+- Services → our-services.html
+- Testimonials → testimonials.html
+- Blog → blog.html
+- Products → our-products.html
+- Contact Us→ contact-us.html
 
 ---
 

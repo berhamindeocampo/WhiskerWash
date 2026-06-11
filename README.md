@@ -45,7 +45,7 @@ WhiskerWash/
 ├── blog/             # Blog posts and articles
 ├── products/         # Detailed product description pages
 ├── services/         # Detailed service description pages
-├── homepage.html     # Website main landing page
+├── index.html     # Website main landing page
 ├── about-us.html     # About the company and team
 ├── our-services.html # Overview of all pet care services
 ├── our-products.html # Product catalog index
@@ -70,7 +70,7 @@ Since this is a client-side web application built with HTML, CSS, and JS, you ca
    ```
 
 2. **Open the Project:**
-   - Simply double-click `homepage.html` to open it in your browser.
+   - Simply double-click `index.html` to open it in your browser.
    - Alternatively, use the **Live Server** extension in VS Code for hot-reloading development.
 
 ---
