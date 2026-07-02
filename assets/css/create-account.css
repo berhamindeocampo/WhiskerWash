@@ -1,0 +1,121 @@
+/* --- Message Section --- */
+
+.main_message {
+    font-family: 'Bayon', sans-serif;
+    font-size: 52px;
+    letter-spacing: 0.02em;
+    color: #111;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+}
+.create-account_message_container {
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+    background-color: #fef8f0;
+}
+
+.create-account_message_container .main_message {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.create-account_message_container .sub_message {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Form Section --- */
+.create-account_page_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 100px 20px;
+    background-color: #fef8f0;
+}
+
+.create-account_form_container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 50px 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.create-account_form_container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(244, 172, 69, 0.15);
+}
+
+.form_group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.form_group input {
+    padding: 16px 20px;
+    border: 2px solid #eaeaea;
+    border-radius: 14px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+    background: #fdfdfd;
+    color: #333;
+}
+
+.form_group input:focus {
+    border-color: #f4ac45;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(244, 172, 69, 0.15);
+}
+
+.create-account_form_container button {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #f4ac45 0%, #e0952d 100%);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(244, 172, 69, 0.25);
+}
+
+.create-account_form_container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(244, 172, 69, 0.4);
+}
+
+.create-account_form_container button:active {
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .create-account_form_container {
+        padding: 40px 25px;
+    }
+    
+    .create-account_message_container .main_message {
+        font-size: 2.2rem;
+    }
+}

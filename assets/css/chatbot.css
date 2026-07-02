@@ -7,11 +7,38 @@
     display: none !important;
 }
 
+/* --- Chatbot Sticky Anchor ---
+   Zero-height wrapper so sticky children never add ghost space to the page.
+   Place this div at the very end of your <body> (or footer), wrapping both
+   .chat-window and .chat-toggle. Example HTML:
+     <div class="chat-anchor">
+       <div class="chat-window hidden">…</div>
+       <button class="chat-toggle">…</button>
+     </div>
+*/
+.chat-anchor {
+    position: sticky;
+    bottom: 0;
+    height: 0;          /* Collapses so it adds zero document flow */
+    overflow: visible;  /* Children still render outside the zero-height box */
+    z-index: 9998;
+    /* Align children to the bottom-right corner */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none; /* Let clicks pass through the anchor itself */
+}
+
+.chat-anchor > * {
+    pointer-events: auto; /* Re-enable clicks on actual children */
+}
+
 /* --- Floating Button --- */
 .chat-toggle {
-    position: fixed;
-    bottom: 90px;
-    right: 30px;
+    position: relative; /* Flows inside the zero-height anchor */
+    bottom: auto;
+    right: auto;
+    margin: 0 20px 20px auto; /* 20px from right & bottom edges */
     background: linear-gradient(135deg, #f4ac45 0%, #e0952d 100%);
     color: #111111;
     border: none;
@@ -40,9 +67,10 @@
 
 /* --- Chat Window Container --- */
 .chat-window {
-    position: fixed;
-    bottom: 160px;
-    right: 30px;
+    position: relative; /* Flows inside the zero-height anchor */
+    bottom: auto;
+    right: auto;
+    margin: 0 20px 12px auto; /* Sits above the toggle button */
     width: 380px;
     height: 520px;
     background-color: #ffffff;
@@ -298,16 +326,16 @@
    Responsive Adjustments
    ========================================================================== */
 @media (max-width: 500px) {
+    .chat-anchor {
+        align-items: stretch; /* Full-width children on mobile */
+    }
     .chat-window {
         width: calc(100% - 40px);
-        right: 20px;
-        left: 20px;
-        bottom: 150px;
+        margin: 0 20px 12px 20px;
         height: 440px;
     }
     .chat-toggle {
-        bottom: 80px;
-        right: 20px;
+        margin: 0 20px 20px auto;
         padding: 12px 18px;
         font-size: 0.95rem;
     }

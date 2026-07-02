@@ -30,7 +30,6 @@
   <link rel="stylesheet" href="assets/css/loading-animations.css">
   <link rel="stylesheet" href="assets/css/dark-mode-toggle.css">
 </head>
-
 <body>
   <div class="homepage_container">
         <div id="preloader" class="preloader">
@@ -43,6 +42,16 @@
       <a class="logo" href="index.html">
         <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
       </a>
+
+      <nav class="nav_links">
+        <ul>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
 
       <div class="header_right_actions">
         <a href="account.html" class="account_icon_btn" aria-label="Account Center">
@@ -57,31 +66,8 @@
           <span class="moon">🌙</span>
         </button> 
 
-        <button class="hamburger-btn" id="hamburger-menu" aria-label="Open Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
       <div class="page-transition-overlay"></div>
     </header>
-
-    <!-- Hamburger Navigation Overlay -->
-    <div class="nav-overlay" id="nav-overlay">
-      <nav class="overlay-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About</a></li>
-          <li><a href="our-services.html">Services</a></li>
-          <li><a href="our-products.html">Products</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="booking.html">Booking</a></li>
-          <li><a href="contact-us.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
 
     <div class="title_section">
         <div class="title_section_container">
@@ -267,6 +253,7 @@
       </div>
 
     </footer>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/page-transitions.js" defer></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(246, 200, 119, 0.35);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 0.3s ease, visibility 0.3s ease;
   flex-shrink: 0;
   margin-left: 8px;
   font-size: 1.25rem;
@@ -98,8 +98,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100dvh;
-  width: min(420px, 100vw);
+  bottom: 0;
+  width: min(420px, 100%);
   background: var(--card-bg, #ffffff);
   box-shadow: -16px 0 60px rgba(0, 0, 0, 0.14);
   z-index: 9001;
@@ -559,4 +559,10 @@
   pointer-events: none !important;
   transform: translateY(20px) !important;
   transition: opacity 250ms ease, transform 250ms ease !important;
+}
+
+@media (max-width: 480px) {
+  .ww_cart_drawer {
+    border-radius: 0;
+  }
 }

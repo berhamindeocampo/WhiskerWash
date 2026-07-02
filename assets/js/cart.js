@@ -137,7 +137,7 @@
     btn.className   = 'ww_cart_btn';
     btn.id          = 'ww-cart-icon-btn';
     btn.setAttribute('aria-label', 'Open cart');
-    btn.innerHTML   = `🛒<span class="ww_cart_badge" id="ww-cart-badge"></span>`;
+    btn.innerHTML   = `<img src="assets/images/shopping-cart.svg"><span class="ww_cart_badge" id="ww-cart-badge"></span>`;
     btn.addEventListener('click', openDrawer);
 
     // Insert right before the theme toggle

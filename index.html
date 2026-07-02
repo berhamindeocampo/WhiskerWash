@@ -32,13 +32,22 @@
   <title>Home - WhiskerWash</title>
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
-
 <body>
   <div class="homepage_container">
     <header class="header">
       <a class="logo" href="index.html">
         <img src="assets/images/whisker_wash_logo.png" alt="Whisker Wash logo">
       </a>
+
+      <nav class="nav_links">
+        <ul>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="our-services.html">Services</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
 
       <div class="header_right_actions">
         <a href="account.html" class="account_icon_btn" aria-label="Account Center">
@@ -53,38 +62,8 @@
           <span class="moon">🌙</span>
         </button> 
 
-        <button class="hamburger-btn" id="hamburger-menu" aria-label="Open Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
       <div class="page-transition-overlay"></div>
     </header>
-
-    <!-- Hamburger Navigation Overlay -->
-    <div class="nav-overlay" id="nav-overlay">
-      <nav class="overlay-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About</a></li>
-          <li><a href="our-services.html">Services</a></li>
-          <li><a href="our-products.html">Products</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="booking.html">Booking</a></li>
-          <li><a href="contact-us.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div id="preloader" class="preloader">
-        <div class="preloader-content">
-            <div class="paw-spinner">🐾</div>
-            <p class="loading-text">Loading...<span class="dots"></span></p>
-        </div>
-    </div>
 
     <div class="hero_section">
       <div class="hero_top">
@@ -101,7 +80,7 @@
         </div>
       </div>
       <div class="hero_bottom">
-        <div class="hero_card hero_card--left">
+        <div class="hero_card hero_card--left"> 
           <img src="assets/images/Image Container.png" alt="Playful dog" />
         </div>
         <div class="hero_message">
@@ -416,8 +395,8 @@
           <div class="social_media_icons">
             <a href="#" class="social_icon">in</a>
             <a href="#" class="social_icon">✈</a>
-            <a href="#" class="social_icon">𝕏</a>
-            <a href="#" class="social_icon">f</a>
+            <a href="https://x.com/CheekiB41883997" class="social_icon">𝕏</a>
+            <a href="https://www.facebook.com/beruhamin/" class="social_icon">f</a>
           </div>
         </div>
       </div>
@@ -427,25 +406,10 @@
           Whisker<br>Wash <span class="paw_icons_small">🐾</span>
         </div>
 
-        <div class="nav_and_contact_wrapper">
-          <nav class="link_containers">
-            <a href="#">Who We Are?</a>
-            <a href="#">Help</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-          </nav>
-
-          <div class="primary_button">
-            <a href="#" class="contact_us_button">Contact Us <span class="arrow">↗</span></a>
-          </div>
-        </div>
-      </div>
-
       <div class="footer_bottom_section">
         <p class="copyright">© 2026 WhiskerWash. All Rights Reserved.</p>
         <div class="footer_links_section">
-          <a class="footer_link" href="#">Privacy Policy</a>
-          <a class="footer_link" href="#">Terms of use</a>
+          <a class="footer_link" href="#">Terms of Service</a>
         </div>
       </div>
 
@@ -453,7 +417,7 @@
   </div>
 
   <script src="assets/js/dynamic-year.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
   <script src="assets/js/page-transitions.js" defer></script>
 
   <!-- My Bookings Modal -->
